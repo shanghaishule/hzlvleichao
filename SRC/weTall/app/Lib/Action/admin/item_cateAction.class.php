@@ -19,18 +19,17 @@ class item_cateAction extends backendAction {
             $r['str_index'] = '<img data-tdtype="toggle" data-id="'.$r['id'].'" data-field="is_index" data-value="'.$r['is_index'].'" src="__STATIC__/images/admin/toggle_' . ($r['is_index'] == 0 ? 'disabled' : 'enabled') . '.gif" />';
             $r['str_type'] = $r['type'] ? '<span class="gray">'.L('item_cate_type_tag').'</span>' : L('item_cate_type_cat');
             $r['str_manage'] = '<a href="javascript:;" class="J_showdialog" data-uri="'.U('item_cate/add',array('pid'=>$r['id'])).'" data-title="'.L('add_item_cate').'" data-id="add" data-width="520" data-height="360">'.L('add_item_subcate').'</a> |
-                            
                                 <a href="javascript:;" class="J_showdialog" data-uri="'.U('item_cate/edit',array('id'=>$r['id'])).'" data-title="'.L('edit').' - '. $r['name'] .'" data-id="edit" data-width="520" data-height="360">'.L('edit').'</a> |
                                 <a href="javascript:;" class="J_confirmurl" data-acttype="ajax" data-uri="'.U('item_cate/delete',array('id'=>$r['id'])).'" data-msg="'.sprintf(L('confirm_delete_one'),$r['name']).'">'.L('delete').'</a>';
-  // <a href="'.U('item_cate/tag_list',array('cate_id'=>$r['id'])).'">'.L('tag').'</a> |
             $r['parentid_node'] = ($r['pid'])? ' class="child-of-node-'.$r['pid'].'"' : '';
+            $r['is_allcate'] = $r['name'] == '全部商品' ? 'allcate' : 'cate&cid='.$r['id'];
             $array[] = $r;
         }
         $str  = "<tr id='node-\$id' \$parentid_node>
                 <td align='center'><input type='checkbox' value='\$id' class='J_checkitem'></td>
                 <td align='center'>\$id</td>
                 <td>\$spacer<span data-tdtype='view' data-field='name' data-id='\$id' class='tdview'  style='color:\$fcolor'>\$name</span></td>
-                <td align='left'>".__PARENTURL__."/weTall/index.php?m=book&a=cate&cid=\$id</td>
+                <td align='left'>".__PARENTURL__."/weTall/index.php?m=book&a=\$is_allcate</td>
         		<td align='center'>\$str_img</td>
                 <td align='center'>\$str_type</td>
                 <td align='center'><span data-tdtype='view' data-field='ordid' data-id='\$id' class='tdview'>\$ordid</span></td>
