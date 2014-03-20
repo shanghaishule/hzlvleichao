@@ -45,8 +45,7 @@ class FunctionAction extends UserAction{
 		$this->assign('token',session('token'));
 		//
 		
-		//检查权限和功能
-		$this->checkauth('Function','Function');
+		
 		
 		$this->display();
 	}
