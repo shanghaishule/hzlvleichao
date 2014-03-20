@@ -96,3 +96,7 @@ INSERT INTO `tp_function` VALUES ('41', '4', '0', '第三方', 'Api', 'index', '
 INSERT INTO `tp_function` VALUES ('42', '4', '0', '留言板', 'Liuyan', 'index', '留言板', '1', '1', '1', '互动', 'Navy');
 -- ----------------------------
 -- ----------------------------
+
+/*开放收款方式*/
+update tp_menu set often = 99 where `name` = '收款方式设置';
+
