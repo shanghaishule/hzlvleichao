@@ -876,7 +876,7 @@ div.order_cancel_box p span {color: #f34; font-weight: bold;}
  * -------------------------------------------------------
  */
 
-#sort_bg {width:100%; font-size:12px; left:0px;position:fixed; top:45px; z-index: 100; margin: 0 auto;display:block;
+#sort_bg {width:100%; max-width:320px; font-size:12px; left:0px;position:relative; top:0px; z-index: 100; margin:auto 0 ;display:block;
 		background: -webkit-gradient(linear, 50% 50%, 50% 50%, from(#fff), to(#999d9c));      /* Safari 4-5, Chrome 1-9*/  
         background: -webkit-linear-gradient(bottom, #fff, #999d9c);   /*Safari5.1 Chrome 10+*/  
         background: -o-linear-gradient(bottom, #fff, #999d9c);   
