@@ -264,14 +264,15 @@ class item_cateAction extends backendAction {
             $result = $this->_upload($_FILES['img'], 'item_cate', array(
                     'width' => C('pin_itemcate_img.width'),
                     'height' => C('pin_itemcate_img.height'),
-                    'remove_origin' => true,
+                    //'remove_origin' => true,
                 )
             );
             if ($result['error']) {
                 $this->ajaxReturn(0, $result['info']);
             } else {
                 $ext = array_pop(explode('.', $result['info'][0]['savename']));
-                $data['img'] = str_replace('.' . $ext, '_thumb.' . $ext, $result['info'][0]['savename']);
+                //$data['img'] = str_replace('.' . $ext, '_thumb.' . $ext, $result['info'][0]['savename']);
+                $data['img'] = $result['info'][0]['savename'];
                 $this->ajaxReturn(1, L('operation_success'), $data['img']);
             }
         } else {
