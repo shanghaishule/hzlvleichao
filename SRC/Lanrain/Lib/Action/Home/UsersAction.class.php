@@ -155,4 +155,30 @@ class UsersAction extends BaseAction{
 
 	}
 	
+	//申请合作
+	public function canvassn(){
+		$db=M('application');
+		
+		$data['addr']=$this->_post('ctl00$ContentPlaceHolder1$tbxAddr','trim');
+		$data['applicant']=$this->_post('ctl00$ContentPlaceHolder1$tbxTrueName','trim');
+		$data['phone']=$this->_post('ctl00$ContentPlaceHolder1$tbxMobilePhone','trim');
+		$data['umail']=$this->_post('ctl00$ContentPlaceHolder1$tbxemail','trim');
+		$data['re']=$this->_post('lj','trim');
+		$data['text']=$this->_post('ctl00$ContentPlaceHolder1$tbxremark','trim');
+		$data['tokenTall'] = '';
+
+		if ($data['applicant'] == "") {
+			$this->error('联系人不能为空！');
+		}
+		if ($data['phone'] == "") {
+			$this->error('电话不能为空！');
+		}
+		
+		if($db->add($data)){
+			$this->success('您的信息已经成功提交！我们会尽快与您联系！');
+		}else{
+			$this->error('您的信息提交失败了！请稍后重试！');
+		}
+	}
+	
 }
