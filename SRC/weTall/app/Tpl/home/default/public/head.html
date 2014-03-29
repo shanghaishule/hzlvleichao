@@ -47,7 +47,8 @@
     		<a href="{:U('book/allcate',array('tokenTall'=>$tokenTall))}" ><span ></span></a>
         </li>
         <li class="r active" id="n_1">
-            <a href="{:U('home/index/index', array('tokenTall'=>$tokenTall))}"><span></span></a>
+            <!--a href="{:U('home/index/index', array('tokenTall'=>$tokenTall))}"><span></span></a-->
+            <a href="__PARENTURL__/index.php?g=Wap&m=Index&a=index&token={$tokenTall}"><span></span></a>
         </li>
         <li class="r" id="n_2"><a href="{:U('user/index', array('tokenTall'=>$tokenTall))}"><span></span></a></li>
         <li class="r" id="n_3"><a href="{:U('shopcart/index', array('tokenTall'=>$tokenTall))}"><span></span></a><i></i></li>
