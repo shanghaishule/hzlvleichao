@@ -364,9 +364,12 @@ class itemAction extends backendAction {
             
             $colorstr = $item["color"];
             $colorarr = explode("|",$colorstr);
+        	$this->assign("colorarr",$colorarr);
+            /*
         	foreach ($colorarr as $color){
                $this->assign("colorarr".$color,$color);
             }
+            */
             
             $this->assign('info', $item);
            
