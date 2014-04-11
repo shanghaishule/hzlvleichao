@@ -1,9 +1,10 @@
 <?php
-return $arr= array (
-  'DB_HOST' => 'lzoon.gotoftp4.com',
-  'DB_PORT' => '3306',
-  'DB_NAME' => 'lzoon',
-  'DB_USER' => 'lzoon',
-  'DB_PWD' => 'hhj900712llc',
-  'DB_PREFIX' => 'tp_',
-);
+$wetallroute = dirname(dirname(dirname(dirname(__FILE__))));
+//dump($wetallroute);exit;
+
+$arr = include($wetallroute."/data/conf/db.php");
+
+//dump($arr);exit;
+
+return $arr;
+?>
